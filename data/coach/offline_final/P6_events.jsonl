@@ -1,0 +1,118 @@
+{"type": "ZONE_OUTSIDE_PLAN", "t": 123, "t_video": 69.0, "kind": "persist", "dist": 369, "countdown": 296, "shrinking": false, "in_vehicle": false, "approaching": false, "closing_mps": 0.5, "t_run": 59, "t_car": 36, "t_need": 59, "budget": 200, "available": 496, "ratio": 0.12, "car": "car_if_handy", "signal": 1.0, "bearing": null, "facing": 226, "rel": null, "compass_name": null, "painkiller": 0, "drink": 0, "adrenaline": 0}
+{"type": "GEAR_MISSING", "t": 129, "t_video": 72.0, "kind": "persist", "parts": ["头盔", "护甲"]}
+{"type": "TEAM_KILL", "t": 155, "t_video": 85.0, "kind": "edge", "raw": "你的队友 队友3 使用ARX突击步枪 精确打击击倒了 玩家75", "action": "击倒", "who": 3, "weapon": "ARX"}
+{"type": "TEAM_KILL", "t": 159, "t_video": 87.0, "kind": "edge", "raw": "你的队友 队友3使用ARX突击步枪 精确打击击倒了 玩家75", "action": "击倒", "who": 3, "weapon": "ARX"}
+{"type": "TEAM_KILL", "t": 163, "t_video": 89.0, "kind": "edge", "raw": "你的队友 队友3 使用ARX突击步枪 精确打击淘汰了 玩家75", "action": "淘汰", "who": 3, "weapon": "ARX"}
+{"type": "ZONE_OUTSIDE_PLAN", "t": 169, "t_video": 92.0, "kind": "persist", "dist": 367, "countdown": 250, "shrinking": false, "in_vehicle": false, "approaching": false, "closing_mps": 0.2, "t_run": 58, "t_car": 35, "t_need": 58, "budget": 200, "available": 450, "ratio": 0.13, "car": "car_if_handy", "signal": 1.0, "bearing": 162, "facing": 101, "rel": "右前方", "compass_name": "南", "painkiller": 0, "drink": 1, "adrenaline": 0}
+{"type": "SELF_KNOCK", "t": 183, "t_video": 99.0, "kind": "edge", "raw": "你使用 P1911手枪精确打击 击倒了 玩家72", "player": "72"}
+{"type": "SELF_KILL", "t": 187, "t_video": 101.0, "kind": "edge", "raw": "你使用 P1911手枪 淘汰了 玩家72", "player": "72"}
+{"type": "TEAM_KILL", "t": 193, "t_video": 104.0, "kind": "edge", "raw": "你的队友 队友2 使用SCAR-L突击步枪击倒了 玩家73", "action": "击倒", "who": 2, "weapon": "SCAR-L"}
+{"type": "TEAM_KILL", "t": 199, "t_video": 107.0, "kind": "edge", "raw": "你的队友 队友2 使用SCAR-L突击步枪精确打击淘汰了 玩家73", "action": "淘汰", "who": 2, "weapon": "SCAR-L"}
+{"type": "ZONE_OUTSIDE_PLAN", "t": 215, "t_video": 115.0, "kind": "persist", "dist": 359, "countdown": 204, "shrinking": false, "in_vehicle": false, "approaching": false, "closing_mps": -7.2, "t_run": 57, "t_car": 35, "t_need": 57, "budget": 200, "available": 404, "ratio": 0.14, "car": "car_if_handy", "signal": 1.0, "bearing": 204, "facing": 13, "rel": "正后方", "compass_name": "西南", "painkiller": 0, "drink": 1, "adrenaline": 0}
+{"type": "AMMO_RESERVE_LOW", "t": 219, "t_video": 117.0, "kind": "persist", "reserve": 8, "cap": 10, "weapon": "P1911"}
+{"type": "AMMO_MAG_LOW", "t": 223, "t_video": 119.0, "kind": "persist", "mag": 2, "cap": 10, "weapon": "P1911", "in_combat": false, "firing": false}
+{"type": "TEAM_KILL", "t": 239, "t_video": 127.0, "kind": "edge", "raw": "你的队友 队友3 使用ACE32突击步枪淘汰了 玩家74", "action": "淘汰", "who": 3, "weapon": "ACE32"}
+{"type": "AMMO_MAG_LOW", "t": 239, "t_video": 127.0, "kind": "persist", "mag": 2, "cap": 10, "weapon": "P1911", "in_combat": false, "firing": false}
+{"type": "TEAM_KILL", "t": 247, "t_video": 131.0, "kind": "edge", "raw": "你的队友 队友3 使用ACE82突击步枪淘汰了 玩家74", "action": "淘汰", "who": 3, "weapon": "ACE82"}
+{"type": "SELF_KNOCK", "t": 257, "t_video": 136.0, "kind": "edge", "raw": "你使用 Kar98K狙击枪精确打击 击倒了 玩家100", "player": "100"}
+{"type": "SELF_KILL", "t": 259, "t_video": 137.0, "kind": "edge", "raw": "你使用 Kar98K狙击枪精确打击 淘汰了 玩家100", "player": "100"}
+{"type": "ZONE_OUTSIDE_PLAN", "t": 261, "t_video": 138.0, "kind": "persist", "dist": 294, "countdown": 158, "shrinking": false, "in_vehicle": false, "approaching": false, "closing_mps": -0.4, "t_run": 47, "t_car": 31, "t_need": 47, "budget": 200, "available": 358, "ratio": 0.13, "car": "car_if_handy", "signal": 1.0, "bearing": 337, "facing": 190, "rel": "右后方", "compass_name": "西北", "painkiller": 0, "drink": 1, "adrenaline": 0}
+{"type": "SELF_KILL", "t": 267, "t_video": 141.0, "kind": "edge", "raw": "你使用 Kar98K狙击枪精确打击淘汰了玩家100", "player": "100"}
+{"type": "AMMO_MAG_LOW", "t": 267, "t_video": 141.0, "kind": "persist", "mag": 3, "cap": 5, "weapon": "Kar98k", "in_combat": true, "firing": false}
+{"type": "TEAM_KILL", "t": 275, "t_video": 145.0, "kind": "edge", "raw": "你的队友 队友2 使用SCAR-L突击步枪淘汰了 玩家85", "action": "淘汰", "who": 2, "weapon": "SCAR-L"}
+{"type": "TEAM_KILL", "t": 341, "t_video": 178.0, "kind": "edge", "raw": "你的队友 队友3 使用ARX突击步枪 淘汰了 玩家93", "action": "淘汰", "who": 3, "weapon": "ARX"}
+{"type": "AMMO_MAG_LOW", "t": 347, "t_video": 181.0, "kind": "persist", "mag": 3, "cap": 40, "weapon": "SCAR-L", "in_combat": true, "firing": true}
+{"type": "ZONE_ENTERED", "t": 357, "t_video": 186.0, "kind": "edge"}
+{"type": "SELF_KNOCK", "t": 375, "t_video": 195.0, "kind": "edge", "raw": "你使用 SCAR-L突击步枪 击倒了 玩家99", "player": "99"}
+{"type": "SELF_KILL", "t": 381, "t_video": 198.0, "kind": "edge", "raw": "你使用 SCAR-L突击步枪 淘汰了 玩家99", "player": "99"}
+{"type": "ZONE_ENTERED", "t": 397, "t_video": 206.0, "kind": "edge"}
+{"type": "ENTER_VEHICLE", "t": 407, "t_video": 211.0, "kind": "edge", "seat": "驾驶", "outside": false, "dist": null}
+{"type": "TEAM_KILL", "t": 419, "t_video": 217.0, "kind": "edge", "raw": "你的队友 队友2 使用SCAR-L突击步枪精确打击淘汰了 玩家97", "action": "淘汰", "who": 2, "weapon": "SCAR-L"}
+{"type": "ZONE_SHRINK_START", "t": 419, "t_video": 217.0, "kind": "edge", "outside": false, "dist": null}
+{"type": "EXIT_VEHICLE", "t": 469, "t_video": 242.0, "kind": "edge", "seat": null, "outside": false, "dist": null}
+{"type": "TEAM_KILL", "t": 479, "t_video": 247.0, "kind": "edge", "raw": "你的队友 队友2 使用SCAR-L突击步枪击倒了 玩家52", "action": "击倒", "who": 2, "weapon": "SCAR-L"}
+{"type": "TEAM_KILL", "t": 483, "t_video": 249.0, "kind": "edge", "raw": "你的队友 队友2 使用SCAR-L突击步枪淘汰了 玩家52", "action": "淘汰", "who": 2, "weapon": "SCAR-L"}
+{"type": "TEAM_KILL", "t": 529, "t_video": 272.0, "kind": "edge", "raw": "你的队友 队友3 使用汤姆逊冲锋枪击倒了 玩家70", "action": "击倒", "who": 3, "weapon": "汤姆逊"}
+{"type": "TEAM_KILL", "t": 531, "t_video": 273.0, "kind": "edge", "raw": "你的队友 队友3 使用汤姆逊冲锋枪淘汰了 玩家70", "action": "淘汰", "who": 3, "weapon": "汤姆逊"}
+{"type": "TEAM_KILL", "t": 537, "t_video": 276.0, "kind": "edge", "raw": "你的队友 队友3使用汤姆逊冲锋枪淘汰了 玩家70", "action": "淘汰", "who": 3, "weapon": "汤姆逊"}
+{"type": "TEAM_KILL", "t": 539, "t_video": 277.0, "kind": "edge", "raw": "你的队友 队友3 使用汤姆逊冲锋枪淘汰了 玩家70", "action": "淘汰", "who": 3, "weapon": "汤姆逊"}
+{"type": "ENERGY_TOPUP", "t": 541, "t_video": 278.0, "kind": "persist", "hp": 0.852, "energy": 0.0, "items": {"drink": 1}, "quiet_s": 160}
+{"type": "TEAM_KILL", "t": 553, "t_video": 284.0, "kind": "edge", "raw": "你的队友 队友2 使用SCAR-L突击步枪精确打击击倒了 玩家53", "action": "击倒", "who": 2, "weapon": "SCAR-L"}
+{"type": "TEAM_KILL", "t": 557, "t_video": 286.0, "kind": "edge", "raw": "你的队友 队友2 使用SCAR-L突击步枪淘汰了 玩家53", "action": "淘汰", "who": 2, "weapon": "SCAR-L"}
+{"type": "SELF_KILL", "t": 559, "t_video": 287.0, "kind": "edge", "raw": "你使用 SCAR-L突击步枪 淘汰了 玩家66", "player": "66"}
+{"type": "TEAM_KILL", "t": 561, "t_video": 288.0, "kind": "edge", "raw": "你的队友 队友4 使用野牛冲锋枪淘汰了 玩家94", "action": "淘汰", "who": 4, "weapon": "野牛"}
+{"type": "TEAM_KILL", "t": 569, "t_video": 292.0, "kind": "edge", "raw": "你的队友 队友4使用野牛冲锋枪淘汰了 玩家94", "action": "淘汰", "who": 4, "weapon": "野牛"}
+{"type": "BOOST_IN_PROGRESS", "t": 589, "t_video": 302.0, "kind": "edge", "raw": "正在使用能量饮料"}
+{"type": "ENTER_VEHICLE", "t": 601, "t_video": 308.0, "kind": "edge", "seat": null, "outside": false, "dist": null}
+{"type": "TEAM_KILL", "t": 623, "t_video": 319.0, "kind": "edge", "raw": "你的队友 队友3 使用ARX突击步枪 精确打击击倒了 玩家68", "action": "击倒", "who": 3, "weapon": "ARX"}
+{"type": "TEAM_KILL", "t": 625, "t_video": 320.0, "kind": "edge", "raw": "你的队友 队友3 使用ARX突击步枪 精确打击淘汰了 玩家68", "action": "淘汰", "who": 3, "weapon": "ARX"}
+{"type": "TEAM_KILL", "t": 627, "t_video": 321.0, "kind": "edge", "raw": "你的队友 队友3使用ARX突击步枪 精确打击淘汰了 玩家68", "action": "淘汰", "who": 3, "weapon": "ARX"}
+{"type": "TEAM_KILL", "t": 631, "t_video": 323.0, "kind": "edge", "raw": "你的队友 队友3 使用ARX突击步枪 精确打击淘汰了 玩家68", "action": "淘汰", "who": 3, "weapon": "ARX"}
+{"type": "SELF_HP_DROP", "t": 655, "t_video": 335.0, "kind": "edge", "frm": 0.951, "to": 0.87, "drop": 0.08}
+{"type": "EXIT_VEHICLE", "t": 683, "t_video": 349.0, "kind": "edge", "seat": null, "outside": false, "dist": null}
+{"type": "TEAM_KILL", "t": 745, "t_video": 380.0, "kind": "edge", "raw": "你的队友 队友4 使用M762突击步枪淘汰了 玩家51", "action": "淘汰", "who": 4, "weapon": "M762"}
+{"type": "AMMO_MAG_LOW", "t": 747, "t_video": 381.0, "kind": "persist", "mag": 3, "cap": 40, "weapon": "SCAR-L", "in_combat": true, "firing": false}
+{"type": "AMMO_MAG_LOW", "t": 763, "t_video": 389.0, "kind": "persist", "mag": 3, "cap": 40, "weapon": "SCAR-L", "in_combat": false, "firing": false}
+{"type": "ENTER_VEHICLE", "t": 775, "t_video": 395.0, "kind": "edge", "seat": "驾驶", "outside": false, "dist": null}
+{"type": "TEAMMATE_DANGER", "t": 777, "t_video": 396.0, "kind": "edge", "member": 3, "in_combat": false}
+{"type": "TEAM_KILL", "t": 791, "t_video": 403.0, "kind": "edge", "raw": "你的队友 队友3 由于在玩家x外时间过长倒地了", "action": "淘汰", "who": 3, "weapon": null}
+{"type": "TEAMMATE_DOWNED", "t": 793, "t_video": 404.0, "kind": "edge", "member": 3, "smoke": 1, "cause": "zone"}
+{"type": "TEAM_KILL", "t": 797, "t_video": 406.0, "kind": "edge", "raw": "你的队友 队友3 由于在玩家X外时间过长倒地了", "action": "淘汰", "who": 3, "weapon": null}
+{"type": "TEAM_KILL", "t": 799, "t_video": 407.0, "kind": "edge", "raw": "你的队友发疯了，玩家以时间过长倒地了", "action": "淘汰", "who": null, "weapon": null}
+{"type": "SELF_HP_DROP", "t": 805, "t_video": 410.0, "kind": "edge", "frm": 0.94, "to": 0.784, "drop": 0.16}
+{"type": "EXIT_VEHICLE", "t": 827, "t_video": 421.0, "kind": "edge", "seat": null, "outside": false, "dist": null}
+{"type": "TEAMMATE_DANGER", "t": 857, "t_video": 436.0, "kind": "edge", "member": 3, "in_combat": false}
+{"type": "ALIVE_STAGE", "t": 867, "t_video": 441.0, "kind": "edge", "threshold": 50, "alive": 50}
+{"type": "TEAM_KILL", "t": 871, "t_video": 443.0, "kind": "edge", "raw": "你的队友 队友2 使用SCAR-L突击步枪淘汰了 玩家67", "action": "淘汰", "who": 2, "weapon": "SCAR-L"}
+{"type": "TEAM_KILL", "t": 875, "t_video": 445.0, "kind": "edge", "raw": "你的队友最终被淘汰了", "action": "淘汰", "who": null, "weapon": null}
+{"type": "ENTER_VEHICLE", "t": 915, "t_video": 465.0, "kind": "edge", "seat": "驾驶", "outside": false, "dist": null}
+{"type": "ZONE_SHRINK_START", "t": 919, "t_video": 467.0, "kind": "edge", "outside": false, "dist": null}
+{"type": "EXIT_VEHICLE", "t": 951, "t_video": 483.0, "kind": "edge", "seat": null, "outside": false, "dist": null}
+{"type": "TEAM_KILL", "t": 985, "t_video": 500.0, "kind": "edge", "raw": "你的队友 队友2 使用SCAR-L突击步枪淘汰了 玩家47", "action": "淘汰", "who": 2, "weapon": "SCAR-L"}
+{"type": "TEAM_KILL", "t": 993, "t_video": 504.0, "kind": "edge", "raw": "你的队友 队友2使用SCAR-L突击步枪淘汰了 玩家47", "action": "淘汰", "who": 2, "weapon": "SCAR-L"}
+{"type": "TEAM_KILL", "t": 1019, "t_video": 517.0, "kind": "edge", "raw": "你的队友 队友2 使用SCAR-L突击步枪击倒了 玩家48", "action": "击倒", "who": 2, "weapon": "SCAR-L"}
+{"type": "TEAM_KILL", "t": 1023, "t_video": 519.0, "kind": "edge", "raw": "你的队友 队友2 使用SCAR-L突击步枪淘汰了 玩家48", "action": "淘汰", "who": 2, "weapon": "SCAR-L"}
+{"type": "ZONE_OUTSIDE_PLAN", "t": 1064, "t_video": 539.0, "kind": "persist", "dist": 523, "countdown": 145, "shrinking": false, "in_vehicle": false, "approaching": false, "closing_mps": 4.0, "t_run": 83, "t_car": 44, "t_need": 83, "budget": 160, "available": 305, "ratio": 0.27, "car": "car_if_handy", "signal": 1.0, "bearing": 130, "facing": 154, "rel": "左前方", "compass_name": "东南", "painkiller": 1, "drink": 4, "adrenaline": 1}
+{"type": "ENTER_VEHICLE", "t": 1091, "t_video": 553.0, "kind": "edge", "seat": "驾驶", "outside": true, "dist": 555}
+{"type": "ALIVE_STAGE", "t": 1091, "t_video": 553.0, "kind": "edge", "threshold": 20, "alive": 19}
+{"type": "ZONE_OUTSIDE_PLAN", "t": 1109, "t_video": 562.0, "kind": "persist", "dist": 590, "countdown": 99, "shrinking": false, "in_vehicle": true, "approaching": false, "closing_mps": 4.6, "t_run": 94, "t_car": 33, "t_need": 33, "budget": 120, "available": 219, "ratio": 0.15, "car": "car_if_handy", "signal": 1.0, "bearing": 91, "facing": 219, "rel": "左后方", "compass_name": "东", "painkiller": 1, "drink": 4, "adrenaline": 1}
+{"type": "TEAM_MSG", "t": 1147, "t_video": 581.0, "kind": "edge", "msg": "队友2：332' 标记了一处地点", "who": "队友2", "msg_kind": "mark", "mark_bearing": 332, "mark_rel": null, "mark_compass": "西北"}
+{"type": "TEAM_MSG", "t": 1151, "t_video": 583.0, "kind": "edge", "msg": "队友2：集合，到我这里来！", "who": "队友2", "msg_kind": "gather", "mark_bearing": null, "mark_rel": null, "mark_compass": null}
+{"type": "ZONE_OUTSIDE_PLAN", "t": 1155, "t_video": 585.0, "kind": "persist", "dist": 432, "countdown": 54, "shrinking": false, "in_vehicle": true, "approaching": false, "closing_mps": -2.9, "t_run": 69, "t_car": 24, "t_need": 24, "budget": 120, "available": 174, "ratio": 0.14, "car": "car_if_handy", "signal": 1.0, "bearing": 93, "facing": 278, "rel": "正后方", "compass_name": "东", "painkiller": 1, "drink": 4, "adrenaline": 1}
+{"type": "TEAM_MSG", "t": 1155, "t_video": 585.0, "kind": "edge", "msg": "队友2：332' 标记了处地点72m 2：集合，到我这里来！", "who": "队友", "msg_kind": "gather", "mark_bearing": 332, "mark_rel": "右前方", "mark_compass": "西北"}
+{"type": "APPROACHING_DEST", "t": 1177, "t_video": 596.0, "kind": "edge", "dist": 234}
+{"type": "ZONE_ENTERED", "t": 1187, "t_video": 601.0, "kind": "edge"}
+{"type": "ZONE_SHRINK_START", "t": 1209, "t_video": 612.0, "kind": "edge", "outside": false, "dist": null}
+{"type": "EXIT_VEHICLE", "t": 1211, "t_video": 613.0, "kind": "edge", "seat": null, "outside": false, "dist": null}
+{"type": "ENTER_VEHICLE", "t": 1297, "t_video": 656.0, "kind": "edge", "seat": null, "outside": false, "dist": null}
+{"type": "EXIT_VEHICLE", "t": 1341, "t_video": 678.0, "kind": "edge", "seat": null, "outside": false, "dist": null}
+{"type": "TEAM_MSG", "t": 1351, "t_video": 683.0, "kind": "edge", "msg": "队友1：8:32' 记了地点", "who": "队友", "msg_kind": "other", "mark_bearing": 32, "mark_rel": "右手边", "mark_compass": "东北"}
+{"type": "TEAM_MSG", "t": 1353, "t_video": 684.0, "kind": "edge", "msg": "队友2：151' 标记了一处关闭的房门", "who": "队友2", "msg_kind": "mark_door", "mark_bearing": 151, "mark_rel": "左手边", "mark_compass": "东南"}
+{"type": "HEAL_IN_PROGRESS", "t": 1363, "t_video": 689.0, "kind": "edge", "raw": "正在使用绷带"}
+{"type": "BOOST_IN_PROGRESS", "t": 1371, "t_video": 693.0, "kind": "edge", "raw": "正在使用能量饮料"}
+{"type": "TEAM_MSG", "t": 1529, "t_video": 772.0, "kind": "edge", "msg": "队友2：24' 防守标记点", "who": "队友2", "msg_kind": "mark_defend", "mark_bearing": 24, "mark_rel": "正前方", "mark_compass": "东北"}
+{"type": "TEAMMATE_DANGER", "t": 1531, "t_video": 773.0, "kind": "edge", "member": 4, "in_combat": false}
+{"type": "ALIVE_STAGE", "t": 1563, "t_video": 789.0, "kind": "edge", "threshold": 10, "alive": 10}
+{"type": "TEAM_MSG", "t": 1589, "t_video": 802.0, "kind": "edge", "msg": "队友1：237' 标记了一处地点", "who": "队友", "msg_kind": "mark", "mark_bearing": 237, "mark_rel": "右前方", "mark_compass": "西南"}
+{"type": "TEAM_KILL", "t": 1595, "t_video": 805.0, "kind": "edge", "raw": "你的队友 队友4 使用M416突击步枪淘汰了 玩家63", "action": "淘汰", "who": 4, "weapon": "M416"}
+{"type": "ZONE_SHRINK_START", "t": 1599, "t_video": 807.0, "kind": "edge", "outside": false, "dist": null}
+{"type": "TEAM_MSG", "t": 1639, "t_video": 827.0, "kind": "edge", "msg": "队友2：137' 这里有人来过", "who": "队友2", "msg_kind": "enemy", "mark_bearing": 137, "mark_rel": "右前方", "mark_compass": "东南"}
+{"type": "TEAM_MSG", "t": 1641, "t_video": 828.0, "kind": "edge", "msg": "队友2：24' 防-标记点", "who": "队友2", "msg_kind": "other", "mark_bearing": 24, "mark_rel": "左前方", "mark_compass": "东北"}
+{"type": "ALIVE_STAGE", "t": 1647, "t_video": 831.0, "kind": "edge", "threshold": 5, "alive": 5}
+{"type": "ZONE_OUTSIDE_PLAN", "t": 1669, "t_video": 842.0, "kind": "persist", "dist": 95, "countdown": 60, "shrinking": false, "in_vehicle": false, "approaching": false, "closing_mps": -1.1, "t_run": 15, "t_car": 20, "t_need": 15, "budget": 50, "available": 110, "ratio": 0.14, "car": "run", "signal": 1.0, "bearing": null, "facing": 194, "rel": null, "compass_name": null, "painkiller": 2, "drink": 2, "adrenaline": 1}
+{"type": "ZONE_OUTSIDE_PLAN", "t": 1673, "t_video": 844.0, "kind": "persist", "dist": 86, "countdown": 56, "shrinking": false, "in_vehicle": false, "approaching": false, "closing_mps": -1.1, "t_run": 14, "t_car": 20, "t_need": 14, "budget": 35, "available": 91, "ratio": 0.15, "car": "run", "signal": 1.0, "bearing": null, "facing": 217, "rel": null, "compass_name": null, "painkiller": 2, "drink": 2, "adrenaline": 1}
+{"type": "TEAM_KILL", "t": 1683, "t_video": 849.0, "kind": "edge", "raw": "你的队友 队友2 使用SCAR-L突击步枪淘汰了 玩家6", "action": "淘汰", "who": 2, "weapon": "SCAR-L"}
+{"type": "ZONE_OUTSIDE_PLAN", "t": 1691, "t_video": 853.0, "kind": "persist", "dist": 85, "countdown": 38, "shrinking": false, "in_vehicle": false, "approaching": false, "closing_mps": -2.1, "t_run": 13, "t_car": 20, "t_need": 13, "budget": 35, "available": 73, "ratio": 0.18, "car": "run", "signal": 1.0, "bearing": 87, "facing": 209, "rel": "左后方", "compass_name": "东", "painkiller": 2, "drink": 2, "adrenaline": 1}
+{"type": "MATCH_WON", "t": 1691, "t_video": 853.0, "kind": "edge", "alive": 4, "tally": {"self_kill": 4, "self_knock": 3, "team_kill": 17, "signal_drops": 0, "self_downed": 0, "team_downed": 1, "zone_entries": 3, "hp_low_episodes": 0}}
+{"type": "ZONE_ENTERED", "t": 1699, "t_video": 857.0, "kind": "edge"}
+{"type": "ZONE_OUTSIDE_PLAN", "t": 1705, "t_video": 860.0, "kind": "persist", "dist": 69, "countdown": 24, "shrinking": false, "in_vehicle": false, "approaching": false, "closing_mps": -3.5, "t_run": 11, "t_car": 19, "t_need": 11, "budget": 35, "available": 59, "ratio": 0.19, "car": "run", "signal": 1.0, "bearing": 147, "facing": 155, "rel": "正前方", "compass_name": "东南", "painkiller": 2, "drink": 2, "adrenaline": 1}
+{"type": "ZONE_ENTERED", "t": 1726, "t_video": 870.0, "kind": "edge"}
+{"type": "ZONE_SHRINK_START", "t": 1730, "t_video": 872.0, "kind": "edge", "outside": false, "dist": null}
+{"type": "ZONE_OUTSIDE_PLAN", "t": 1732, "t_video": 873.0, "kind": "persist", "dist": 60, "countdown": 0, "shrinking": true, "in_vehicle": false, "approaching": false, "closing_mps": -1.5, "t_run": 10, "t_car": 18, "t_need": 10, "budget": 35, "available": 35, "ratio": 0.27, "car": "run", "signal": 1.0, "bearing": null, "facing": 167, "rel": null, "compass_name": null, "painkiller": 2, "drink": 2, "adrenaline": 1}
+{"type": "ZONE_ENTERED", "t": 1740, "t_video": 877.0, "kind": "edge"}
+{"type": "ZONE_ENTERED", "t": 1760, "t_video": 887.0, "kind": "edge"}
+{"type": "SIGNAL_DROPPING", "t": 1762, "t_video": 888.0, "kind": "persist", "frm": 1.0, "to": 0.957, "dist": null, "bearing": null, "facing": 81, "rel": null, "painkiller": 2, "drink": 2, "adrenaline": 1, "budget_left": 24}
+{"type": "TEAM_KILL", "t": 1776, "t_video": 895.0, "kind": "edge", "raw": "你的队友 队友4 使用VSS射手步枪淘汰了 玩家23", "action": "淘汰", "who": 4, "weapon": "VSS"}
+{"type": "TEAM_KILL", "t": 1780, "t_video": 897.0, "kind": "edge", "raw": "你的队友 队友4使用VSS射手步枪淘汰了玩家23", "action": "淘汰", "who": 4, "weapon": "VSS"}
+{"type": "TEAM_KILL", "t": 1782, "t_video": 898.0, "kind": "edge", "raw": "你的队友淘汰了玩家23", "action": "淘汰", "who": null, "weapon": null}
+{"type": "TEAM_KILL", "t": 1784, "t_video": 899.0, "kind": "edge", "raw": "你的队友 队友4 使用VSS射手步枪淘汰了 玩家23", "action": "淘汰", "who": 4, "weapon": "VSS"}

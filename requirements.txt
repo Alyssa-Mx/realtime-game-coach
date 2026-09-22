@@ -1,0 +1,20 @@
+# 复算数字 / 单测 / 打包 demo：只需要 Python 3.10+ 标准库
+#   python analysis/reproduce.py
+#   python -m unittest discover -s tests
+#   python tools/build_demo.py
+
+# 重画配图
+matplotlib>=3.8
+
+# 规则层读小地图方位（coach/minimap.py）
+opencv-python-headless
+numpy
+
+# 读仪表盘模型：训练与推理（实测版本）
+# torch==2.8.0
+# transformers==4.57.1
+# peft
+# vllm==0.19.1            # 感知常驻服务（H20，驱动 535 → CUDA 12 系，vLLM 上限 0.19.1）
+
+# 说话人：Qwen3-Omni 全本地（独立环境）
+# vllm==0.18.0 + vllm-omni==0.18.0, transformers==4.57.6

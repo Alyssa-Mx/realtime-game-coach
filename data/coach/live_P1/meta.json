@@ -1,0 +1,13 @@
+{
+ "video": "P1",
+ "mode": "live-stream",
+ "speed": 1.0,
+ "frames": 880,
+ "spoken": 38,
+ "dropped_busy": 0,
+ "dropped_must": 0,
+ "errors": 0,
+ "wall_s": 1800.0,
+ "t_from": null,
+ "t_to": null
+}

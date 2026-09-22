@@ -1,0 +1,545 @@
+<title>和平精英 AI 教练回放</title>
+<meta name="description" content="一场 30 分钟四排对局的真实链路回放：读仪表盘 → 记录员判事件 → 编导定优先级 → 说话人出一句话和语音。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Noto+Sans+SC:wght@400;500;700&display=swap">
+<style>
+:root{
+  --bg:#f2f4f3; --surface:#ffffff; --surface2:#e9edeb; --ink:#111615; --ink2:#44504d; --muted:#7a8683; --line:#d8dedc;
+  --accent:#2a78d6; --accent-soft:#dbe8f8;
+  --p0:#d0382a; --p1:#bf8a00; --p2:#3a6fd8; --p3:#179466;
+  --p0-soft:#f9e2de; --p1-soft:#f6edd4; --p2-soft:#e0e9f9; --p3-soft:#d9f0e6;
+  --p0-ink:#a52a1f; --p1-ink:#7d5a00; --p2-ink:#2553b0; --p3-ink:#0d6d4b;
+  --screen:#0e1312; --screen2:#151c1a; --hud:#e8efec; --hud2:#95a8a2; --roi:#3f5a53; --roi-label:#6f8a83;
+  --bar-hp:#e8efec; --bar-sig:#62b6ff; --bar-en:#f2c14e; --danger:#ff6a52; --downed:#f39c34; --msg:#f2c14e;
+  --warn-ink:#8a4a00; --warn-bg:#fbefdc;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  --sans:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0d1110; --surface:#151b19; --surface2:#1c2422; --ink:#e8efec; --ink2:#b1bcb8; --muted:#7c8884; --line:#28312f;
+    --accent:#3987e5; --accent-soft:#1a2d44;
+    --p0:#d23d35; --p1:#b88c1c; --p2:#5591e8; --p3:#1d9a6f;
+    --p0-soft:#3a1a17; --p1-soft:#33290f; --p2-soft:#172a44; --p3-soft:#0f2e23;
+    --p0-ink:#f08378; --p1-ink:#e3b64e; --p2-ink:#8db6f2; --p3-ink:#56c79c;
+    --screen:#090d0c; --screen2:#101614;
+    --warn-ink:#f3c27a; --warn-bg:#35270f;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0d1110; --surface:#151b19; --surface2:#1c2422; --ink:#e8efec; --ink2:#b1bcb8; --muted:#7c8884; --line:#28312f;
+  --accent:#3987e5; --accent-soft:#1a2d44;
+  --p0:#d23d35; --p1:#b88c1c; --p2:#5591e8; --p3:#1d9a6f;
+  --p0-soft:#3a1a17; --p1-soft:#33290f; --p2-soft:#172a44; --p3-soft:#0f2e23;
+  --p0-ink:#f08378; --p1-ink:#e3b64e; --p2-ink:#8db6f2; --p3-ink:#56c79c;
+  --screen:#090d0c; --screen2:#101614;
+  --warn-ink:#f3c27a; --warn-bg:#35270f;
+}
+*{box-sizing:border-box}
+html,body{background:var(--bg)}
+body{color:var(--ink);font-family:var(--sans);font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1360px;margin:0 auto;padding-inline:20px;padding-block:18px 0}
+h1,h2,h3{margin:0;text-wrap:balance}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* ---------- 顶部 ---------- */
+.top{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px 28px;align-items:end;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:12px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;font-weight:500}
+.top h1{font-size:24px;font-weight:700;letter-spacing:.01em;margin-top:2px}
+.top p{margin:6px 0 0;color:var(--ink2);max-width:62ch}
+.chain{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:10px;font-size:12.5px;color:var(--ink2)}
+.chain b{font-weight:600;color:var(--ink);background:var(--surface2);border:1px solid var(--line);border-radius:6px;padding:2px 8px}
+.chain i{font-style:normal;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(5,minmax(96px,auto));gap:0;border:1px solid var(--line);border-radius:10px;background:var(--surface);overflow:hidden}
+.stat{padding:10px 14px;border-left:1px solid var(--line)}
+.stat:first-child{border-left:0}
+.stat .v{font-family:var(--mono);font-size:20px;font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.stat .v small{font-size:12px;font-weight:400;color:var(--muted);margin-left:2px}
+.stat .k{font-size:12px;color:var(--muted);white-space:nowrap}
+
+/* ---------- 主体 ---------- */
+.stage{display:grid;grid-template-columns:minmax(0,1.62fr) minmax(300px,1fr);gap:18px;padding-block:16px}
+.panel-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:8px}
+.panel-h h2{font-size:13px;font-weight:700;letter-spacing:.02em}
+.panel-h span{font-size:12px;color:var(--muted)}
+.screen{position:relative;border-radius:10px;overflow:hidden;background:var(--screen);box-shadow:0 1px 0 var(--line)}
+.screen svg{display:block;width:100%;height:auto}
+.screen .clock{position:absolute;right:10px;bottom:8px;font-family:var(--mono);font-size:12px;color:var(--hud2);background:rgba(0,0,0,.35);padding:2px 7px;border-radius:5px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px;font-size:12px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:10px;height:10px;border-radius:3px;display:inline-block}
+
+.evfeed{margin-top:14px}
+.evlist{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.evlist li{display:grid;grid-template-columns:52px 88px minmax(0,1fr);gap:10px;align-items:baseline;padding:5px 10px;border-radius:7px;background:var(--surface);border:1px solid var(--line);font-size:12.5px}
+.evlist li.fresh{border-color:var(--accent)}
+.evlist .tt{font-family:var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.evlist .mod{font-size:11.5px;color:var(--ink2)}
+.evlist .ev{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.evlist .ev b{font-weight:600}
+.evlist .ev em{font-style:normal;color:var(--muted);margin-left:6px}
+.evlist .empty{color:var(--muted);background:transparent;border-style:dashed;grid-template-columns:1fr}
+
+/* ---------- 右侧卡片流 ---------- */
+.right{display:flex;flex-direction:column;min-height:0}
+.cards{display:flex;flex-direction:column;gap:8px;overflow-y:auto;max-height:calc(100vh - 250px);min-height:420px;padding-right:4px;scroll-behavior:smooth}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px 11px;display:grid;gap:6px;cursor:pointer;transition:opacity .2s,border-color .2s}
+.card.future{opacity:.42}
+.card.now{border-color:var(--ink2);box-shadow:0 0 0 1px var(--ink2)}
+.card .row1{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.pill{font-family:var(--mono);font-size:11.5px;font-weight:600;padding:1px 7px;border-radius:999px;border:1px solid currentColor;line-height:1.5}
+.pill.P0{color:var(--p0-ink);background:var(--p0-soft);border-color:var(--p0)}.pill.P1{color:var(--p1-ink);background:var(--p1-soft);border-color:var(--p1)}
+.pill.P2{color:var(--p2-ink);background:var(--p2-soft);border-color:var(--p2)}.pill.P3{color:var(--p3-ink);background:var(--p3-soft);border-color:var(--p3)}
+.card .act{font-weight:700;font-size:13.5px}
+.card .when{margin-left:auto;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.card .say{font-size:15px;font-weight:500;line-height:1.5}
+.card .say::before{content:"“";color:var(--muted)}.card .say::after{content:"”";color:var(--muted)}
+.card .route{font-size:12px;color:var(--ink2)}
+.card .route b{font-weight:500;color:var(--ink)}
+.why{display:none;gap:4px;font-size:12.5px;color:var(--ink2);border-top:1px dashed var(--line);padding-top:6px}
+.card.now .why,.card.open .why{display:grid}
+.why div span{color:var(--muted);margin-right:6px}
+.lat{display:grid;gap:3px;margin-top:2px}
+.latbar{display:flex;height:8px;border-radius:4px;overflow:hidden;background:var(--surface2)}
+.latbar i{display:block;height:100%}
+.latbar .a{background:var(--hud2)}.latbar .b{background:var(--accent)}.latbar .c{background:var(--p3)}
+.latlab{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--muted);gap:8px;flex-wrap:wrap}
+.note{font-size:12.5px;color:var(--warn-ink);background:var(--warn-bg);border-radius:7px;padding:6px 9px}
+.playbtn{border:1px solid var(--line);background:var(--surface2);border-radius:7px;padding:2px 9px;font-size:12px;cursor:pointer}
+.playbtn:hover{border-color:var(--ink2)}
+
+/* ---------- 播放条 ---------- */
+.transport{position:sticky;bottom:0;z-index:5;background:var(--bg);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+.transport .inner{max-width:1360px;margin:0 auto;padding-inline:20px;padding-block:10px 12px;display:grid;gap:8px}
+.ctrl{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:5px 11px;cursor:pointer;font-size:13px;display:inline-flex;align-items:center;gap:6px}
+.btn:hover{border-color:var(--ink2)}
+.btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink);min-width:78px;justify-content:center;font-weight:600}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--surface)}
+.seg button{border:0;background:transparent;padding:5px 10px;cursor:pointer;font-family:var(--mono);font-size:12.5px;border-left:1px solid var(--line)}
+.seg button:first-child{border-left:0}
+.seg button[aria-pressed="true"]{background:var(--surface2);font-weight:600}
+.tcur{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:13px;color:var(--ink2);margin-left:auto}
+.chk{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--ink2);cursor:pointer}
+.tl{position:relative;cursor:pointer;touch-action:none}
+.tl svg{display:block;width:100%;height:58px}
+.tip{position:absolute;bottom:62px;transform:translateX(-50%);background:var(--ink);color:var(--bg);font-size:12px;padding:4px 8px;border-radius:6px;white-space:nowrap;pointer-events:none}
+
+/* ---------- 说明 ---------- */
+.notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;padding-block:22px 28px;border-top:1px solid var(--line);margin-top:6px}
+.notes h3{font-size:13px;margin-bottom:6px}
+.notes p,.notes li{font-size:13px;color:var(--ink2);margin:0}
+.notes ul{margin:0;padding-left:18px;display:grid;gap:4px}
+
+@media (max-width:980px){
+  .top{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .stat{border-top:1px solid var(--line)}
+  .stat:nth-child(-n+3){border-top:0}.stat:nth-child(4){border-left:0}
+  .stage{grid-template-columns:1fr}
+  .cards{max-height:none;min-height:0;overflow:visible}
+  .notes{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .wrap,.transport .inner{padding-inline:16px}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stat:nth-child(3){border-left:0}.stat:nth-child(4){border-left:1px solid var(--line)}.stat:nth-child(5){border-left:0}
+  .stat:nth-child(3){border-top:1px solid var(--line)}
+  .evlist li{grid-template-columns:46px minmax(0,1fr)}
+  .evlist .mod{display:none}
+  .tcur{margin-left:0}
+}
+@media (prefers-reduced-motion:reduce){.cards{scroll-behavior:auto}.card{transition:none}}
+</style>
+<!--HEAD-END-->
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="eyebrow">实时多模态游戏教练 · 整场回放</div>
+      <h1>和平精英 AI 教练：一场 30 分钟四排的真实链路</h1>
+      <p>画面按真实节奏每 2 秒到一帧：自己训的读仪表盘模型把 21 个框读成数 → 记录员用规则判出“事” → 编导查决策树、定急缓 → 说话人看最近 4 帧画面，把这一件事说成一句话并出语音。下面每个数都是这场实跑记录下来的。</p>
+      <div class="chain"><b>读仪表盘</b><i>Qwen3-VL-8B + LoRA</i><i>→</i><b>记录员</b><i>规则</i><i>→</i><b>编导</b><i>规则</i><i>→</i><b>说话人</b><i>Qwen3-Omni · vLLM-Omni</i></div>
+    </div>
+    <div class="stats" id="stats"></div>
+  </header>
+
+  <main class="stage">
+    <section class="left" aria-label="仪表盘读数">
+      <div class="panel-h"><h2>模型读到的仪表盘</h2><span>游戏画面不公开，这里只把 21 个框的读数按原位置画出来</span></div>
+      <div class="screen"><svg id="hud" viewBox="0 0 1280 720" role="img" aria-label="仪表盘读数示意"></svg><div class="clock" id="clock"></div></div>
+      <div class="legend">
+        <span><i class="sw" style="background:var(--danger)"></i>队友危险</span>
+        <span><i class="sw" style="background:var(--downed)"></i>倒地</span>
+        <span><i class="sw" style="background:var(--bar-sig)"></i>信号值</span>
+        <span><i class="sw" style="background:var(--bar-en)"></i>能量</span>
+        <span>虚线框 = 模型逐帧裁出来读的区域</span>
+      </div>
+      <div class="evfeed">
+        <div class="panel-h"><h2>记录员：刚判出的事</h2><span id="evcount"></span></div>
+        <ol class="evlist" id="evlist"></ol>
+      </div>
+    </section>
+
+    <aside class="right" aria-label="编导与说话人">
+      <div class="panel-h"><h2>编导 → 说话人</h2><span>点一张卡跳到那一刻</span></div>
+      <div class="cards" id="cards"></div>
+    </aside>
+  </main>
+
+  <section class="notes">
+    <div>
+      <h3>这场是怎么跑的</h3>
+      <p>P1 这局（四排，30 分钟）按真实墙钟节奏喂帧：感知、规则、说话人在同一台机器上并发，所有延迟都是实测。感知跑在 1 张 H20 上，说话人（Qwen3-Omni thinker + talker）用 vLLM-Omni 部署在另外 2 张卡上，全部本地推理。</p>
+    </div>
+    <div>
+      <h3>读这页时要知道的</h3>
+      <ul>
+        <li>P1 在读仪表盘模型的训练集里，这场的读数比真实上线时更准；留出场 P8 上 21 个字段平均 0.952。</li>
+        <li>“玩家听到”= 这一帧画面到达 → 说话人第一个语音块生成，包含感知、决策和生成三段。</li>
+        <li>黄色备注是我逐句审读时发现的问题，原样保留。</li>
+      </ul>
+    </div>
+    <div>
+      <h3>键盘</h3>
+      <p><span style="font-family:var(--mono)">空格</span> 播放 / 暂停，<span style="font-family:var(--mono)">← →</span> 上一句 / 下一句。1× 是真实对局速度，2× 以内到点自动播放语音。</p>
+    </div>
+  </section>
+</div>
+
+<div class="transport">
+  <div class="inner">
+    <div class="ctrl">
+      <button class="btn primary" id="play" type="button">播放</button>
+      <button class="btn" id="prev" type="button" aria-label="上一句">← 上一句</button>
+      <button class="btn" id="next" type="button" aria-label="下一句">下一句 →</button>
+      <div class="seg" role="group" aria-label="播放速度" id="speed"></div>
+      <label class="chk"><input type="checkbox" id="snd" checked> 到点播放语音</label>
+      <span class="tcur" id="tcur"></span>
+    </div>
+    <div class="tl" id="tl"><svg id="tlsvg" preserveAspectRatio="none"></svg><div class="tip" id="tip" hidden></div></div>
+  </div>
+</div>
+
+<script>
+window.DEMO = /*__DEMO_DATA__*/null;
+</script>
+<script>
+(function () {
+  "use strict";
+  const D = window.DEMO;
+  const $ = (id) => document.getElementById(id);
+  const NS = "http://www.w3.org/2000/svg";
+  const K = D.readingKeys.reduce((o, k, i) => (o[k] = i, o), {});
+  const R = D.readings;                                   // 每帧一行（数组），按 t 升序
+  const SP = D.speech;
+  const EV = D.events;                                    // [t, type, detail]
+  const T0 = R[0][K.t], T1 = R[R.length - 1][K.t];
+  const PCN = {P0: "生存中断", P1: "战斗决策", P2: "战术优化", P3: "陪伴反馈"};
+  const EVN = D.eventNames;                               // type -> [中文名, 模块]
+
+  const fmt = (s) => { s = Math.max(0, Math.round(s)); return String(Math.floor(s / 60)).padStart(2, "0") + ":" + String(s % 60).padStart(2, "0"); };
+  const cssv = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  // 颜色和字体走 CSS 变量：写进 style（presentation attribute 里的 var() 在个别浏览器上不生效）
+  const el = (tag, attrs, parent) => {
+    const e = document.createElementNS(NS, tag); let css = "";
+    for (const k in attrs) {
+      const v = String(attrs[k]);
+      if (v.includes("var(")) css += `${k}:${v};`; else e.setAttribute(k, v);
+    }
+    if (css) e.setAttribute("style", css);
+    if (parent) parent.appendChild(e); return e;
+  };
+
+  // ---------------- 统计 ----------------
+  const st = D.stats;
+  $("stats").innerHTML = [
+    [st.minutes, "分钟", "整场实跑"],
+    [st.events, "", "记录员判出的事"],
+    [st.spoken, "句", "说出口"],
+    [st.perc_med.toFixed(2), "s", "读一帧（中位）"],
+    [st.heard_med.toFixed(2), "s", "画面到 → 听到"],
+  ].map(([v, u, k]) => `<div class="stat"><div class="v">${v}<small>${u}</small></div><div class="k">${k}</div></div>`).join("");
+
+  // ---------------- HUD 示意 ----------------
+  const svg = $("hud");
+  const B = D.rois;                                        // key -> [x,y,w,h]
+  el("rect", {x: 0, y: 0, width: 1280, height: 720, fill: "var(--screen)"}, svg);
+  const g0 = el("g", {}, svg);
+  // 主视角留白：只写一行说明
+  const cap = el("text", {x: 640, y: 300, "text-anchor": "middle", fill: "var(--roi-label)", "font-size": 22, "font-family": "var(--sans)"}, g0);
+  cap.textContent = "主视角画面不公开";
+  const cap2 = el("text", {x: 640, y: 332, "text-anchor": "middle", fill: "var(--roi-label)", "font-size": 15, "font-family": "var(--sans)"}, g0);
+  cap2.textContent = "说话人能看到最近 4 帧，用来补掩体、地形这类读数里没有的东西";
+  const LABEL = {alive: "剩余人数", zone_countdown: "缩圈倒计时", zone_dist_m: "离安全区", team_panel: "队友状态栏", killfeed: "他人击杀记录",
+    team_msgs: "队友消息", compass: "罗盘", banner: "击杀横幅", hp: "血量", signal: "信号", energy: "能量", ammo_mag: "弹匣/备弹",
+    scope: "倍镜", helmet: "头盔", armor: "护甲", supplies: "背包物资", weapon_slot1: "手上的枪", weapon_slot2: "另一把", in_vehicle: "载具",
+    stance: "姿势", game_t: "对局时间", minimap: "小地图"};
+  for (const k in B) {
+    const [x, y, w, h] = B[k];
+    el("rect", {x: x + .5, y: y + .5, width: w - 1, height: h - 1, fill: "none", stroke: "var(--roi)", "stroke-dasharray": "4 4", "stroke-width": 1, rx: 3}, g0);
+    // 只给大框写标签；底部一排小框的读数本身就能看懂（Lv3、30/169、M762），写了反而互相压住
+    const POS = {team_panel: [x + 3, y + h + 13, "start"], killfeed: [x + 3, y + h + 13, "start"], team_msgs: [x + 3, y - 5, "start"],
+      supplies: [x + w + 6, y + 12, "start"], zone_dist_m: [x - 6, y + 19, "end"], zone_countdown: [x - 6, y + 20, "end"]};
+    if (POS[k]) {
+      const t = el("text", {x: POS[k][0], y: POS[k][1], "text-anchor": POS[k][2], fill: "var(--roi-label)", "font-size": 12, "font-family": "var(--sans)"}, g0);
+      t.textContent = LABEL[k];
+    }
+  }
+  const g = el("g", {}, svg);                              // 每帧重画的读数层
+
+  const txt = (x, y, s, o = {}) => { const t = el("text", Object.assign({x, y, fill: "var(--hud)", "font-size": 16, "font-family": "var(--mono)"}, o), g); t.textContent = s; return t; };
+  const bar = (k, v, color) => {
+    const [x, y, w, h] = B[k];
+    el("rect", {x, y, width: w, height: h, rx: Math.min(3, h / 2), fill: "var(--screen2)"}, g);
+    if (v != null) el("rect", {x, y, width: Math.max(0, Math.min(1, v)) * w, height: h, rx: Math.min(3, h / 2), fill: color}, g);
+  };
+  const SUPN = ["雷", "烟", "医疗箱", "急救包", "闪", "燃", "肾上腺", "止痛", "EMP", "", "饮料", "绷带"];
+  const pct = (v) => v == null ? "—" : Math.round(v * 100) + "%";
+
+  function drawHud(r) {
+    while (g.firstChild) g.removeChild(g.firstChild);
+    const v = (k) => r[K[k]];
+    // 左上：剩余人数
+    txt(B.alive[0] + 6, B.alive[1] + 21, "剩余 " + (v("alive") ?? "—"), {"font-size": 18, "font-weight": 600});
+    // 队友状态栏：4 行（自己那一行单独标出）
+    const [px, py, pw, ph] = B.team_panel, rowH = ph / 4, danger = v("danger") || [], downed = v("downed") || [];
+    for (let i = 1; i <= 4; i++) {
+      const yy = py + (i - 1) * rowH + rowH / 2;
+      const self = i === D.selfSlot;
+      const st = downed.includes(i) ? "downed" : danger.includes(i) ? "danger" : "ok";
+      const col = st === "downed" ? "var(--downed)" : st === "danger" ? "var(--danger)" : "var(--hud2)";
+      txt(px + 8, yy + 5, self ? "你" : String(i), {"font-size": 14, fill: self ? "var(--hud)" : "var(--hud2)", "font-family": "var(--sans)"});
+      el("rect", {x: px + 34, y: yy - 4, width: pw - 60, height: 8, rx: 3, fill: col, opacity: st === "ok" ? .45 : 1}, g);
+      if (st !== "ok") txt(px + pw - 22, yy + 5, st === "downed" ? "倒" : "危", {"font-size": 12, fill: col, "font-family": "var(--sans)"});
+    }
+    // 他人击杀记录
+    (v("kf") || []).slice(0, 3).forEach((s, i) => txt(B.killfeed[0] + 6, B.killfeed[1] + 22 + i * 24, s, {"font-size": 13, fill: "var(--hud2)", "font-family": "var(--sans)"}));
+    // 罗盘
+    const comp = v("comp");
+    txt(640, 30, comp == null ? "—" : String(comp).padStart(3, "0") + "°", {"text-anchor": "middle", "font-size": 18, "font-weight": 600});
+    // 小地图
+    const [mx, my, mw, mh] = B.minimap;
+    const mt = el("text", {x: mx + mw / 2, y: my + mh / 2 + 4, "text-anchor": "middle", fill: "var(--roi-label)", "font-size": 12, "font-family": "var(--sans)"}, g);
+    mt.textContent = "只读安全区方位";
+    // 圈距 + 倒计时
+    const dist = v("dist"), cd = v("cd");
+    txt(B.zone_dist_m[0] + 8, B.zone_dist_m[1] + 20, dist == null ? "圈内" : dist + " m", {"font-size": 16, fill: dist == null ? "var(--hud2)" : "var(--hud)"});
+    txt(B.zone_countdown[0] + 8, B.zone_countdown[1] + 21, cd == null ? "—" : (cd === "00:00" ? "正在缩圈" : cd), {"font-size": 16, "font-family": cd === "00:00" ? "var(--sans)" : "var(--mono)"});
+    // 队友消息
+    (v("msg") || []).slice(-4).forEach((s, i) => txt(B.team_msgs[0] + 6, B.team_msgs[1] + 22 + i * 24, s.length > 16 ? s.slice(0, 16) + "…" : s, {"font-size": 13, fill: "var(--msg)", "font-family": "var(--sans)"}));
+    // 击杀横幅
+    const ban = v("ban");
+    if (ban) {
+      const [bx, by, bw, bh] = B.banner;
+      el("rect", {x: bx, y: by, width: bw, height: bh, rx: 6, fill: "rgba(255,255,255,.08)"}, g);
+      txt(bx + bw / 2, by + bh / 2 + 6, ban, {"text-anchor": "middle", "font-size": 17, "font-family": "var(--sans)", "font-weight": 500});
+    }
+    // 三条
+    bar("energy", v("en"), "var(--bar-en)");
+    bar("hp", v("hp"), "var(--bar-hp)");
+    bar("signal", v("sig"), "var(--bar-sig)");
+    txt(B.hp[0] + B.hp[2] + 8, B.hp[1] + 12, "血 " + pct(v("hp")), {"font-size": 13, fill: "var(--hud2)"});
+    if (v("sig") != null && v("sig") < .999) txt(B.signal[0] + B.signal[2] + 8, B.signal[1] + 9, "信号 " + pct(v("sig")), {"font-size": 12, fill: "var(--bar-sig)"});
+    // 弹药 / 倍镜 / 头盔护甲
+    const mag = v("mag"), res = v("res");
+    txt(B.ammo_mag[0] + 6, B.ammo_mag[1] + 21, mag == null ? "—" : String(mag), {"font-size": 18, "font-weight": 600});
+    if (res != null) txt(B.ammo_mag[0] + 40, B.ammo_mag[1] + 21, "/" + res, {"font-size": 12, fill: "var(--hud2)"});
+    if (v("scope")) txt(B.scope[0] + 26, B.scope[1] + 20, v("scope"), {"font-size": 12, fill: "var(--hud2)"});
+    [["helmet", "hl", "hd"], ["armor", "al", "ad"]].forEach(([k, lv, du]) => {
+      const L = v(lv), U = v(du);
+      txt(B[k][0] + 4, B[k][1] + 16, L ? "Lv" + L : "无", {"font-size": 12, fill: L ? "var(--hud)" : "var(--hud2)"});
+      if (L) txt(B[k][0] + 4, B[k][1] + 30, U == null ? "满" : U >= .99 ? "满" : "不满", {"font-size": 11, fill: "var(--hud2)", "font-family": "var(--sans)"});
+    });
+    // 武器
+    txt(B.weapon_slot1[0] + 8, B.weapon_slot1[1] + 36, v("w1") || "—", {"font-size": 14, "font-family": "var(--sans)", "font-weight": 600});
+    txt(B.weapon_slot2[0] + 8, B.weapon_slot2[1] + 36, v("w2") || "—", {"font-size": 13, fill: "var(--hud2)", "font-family": "var(--sans)"});
+    // 载具 / 姿势
+    if (v("veh")) txt(B.in_vehicle[0] + 8, B.in_vehicle[1] + 42, "在车上", {"font-size": 14, "font-family": "var(--sans)", fill: "var(--accent)"});
+    txt(B.stance[0] + 12, B.stance[1] + 36, v("stance") || "", {"font-size": 16, "font-family": "var(--sans)", fill: "var(--hud2)"});
+    // 物资 3×4
+    const [sx, sy, sw, sh] = B.supplies, sup = v("sup") || [];
+    for (let i = 0; i < 12; i++) {
+      if (!SUPN[i]) continue;
+      const cx = sx + (i % 4) * sw / 4 + 3, cy = sy + Math.floor(i / 4) * sh / 3 + 18, n = sup[i] || 0;
+      txt(cx, cy, (n ? n : "·"), {"font-size": 13, fill: n ? "var(--hud)" : "var(--roi)"});
+      if (n) txt(cx + 13, cy, SUPN[i].slice(0, 2), {"font-size": 10, fill: "var(--hud2)", "font-family": "var(--sans)"});
+    }
+    // 对局时间 + 这一帧读了多久
+    txt(B.game_t[0] + 4, B.game_t[1] + 15, fmt(r[K.t]), {"font-size": 13, fill: "var(--hud2)"});
+    $("clock").textContent = "这一帧读了 " + (r[K.lp] == null ? "—" : r[K.lp].toFixed(2) + " s");
+  }
+
+  // ---------------- 记录员事件流 ----------------
+  const spokenAt = new Set(SP.map((s) => s.t));
+  function drawEvents(now) {
+    let hi = -1;
+    for (let i = 0; i < EV.length; i++) { if (EV[i][0] <= now) hi = i; else break; }
+    const list = $("evlist");
+    const rows = [];
+    for (let i = hi; i >= 0 && rows.length < 6; i--) {
+      const [t, type, det] = EV[i];
+      const [cn, mod] = EVN[type] || [type, ""];
+      const fresh = now - t < 6;
+      rows.push(`<li class="${fresh ? "fresh" : ""}"><span class="tt">${fmt(t)}</span><span class="mod">${mod}</span><span class="ev"><b>${cn}</b>${det ? `<em>${det}</em>` : ""}</span></li>`);
+    }
+    list.innerHTML = rows.length ? rows.join("") : `<li class="empty">这一刻之前还没有事件</li>`;
+    $("evcount").textContent = `截至 ${fmt(now)}：${hi + 1} / ${EV.length} 件`;
+  }
+
+  // ---------------- 卡片 ----------------
+  const MAXLAT = Math.max(...SP.map((s) => s.e2e_heard || 0));
+  const cardsEl = $("cards");
+  SP.forEach((s, i) => {
+    const c = document.createElement("div");
+    c.className = "card future"; c.id = "c" + i; c.tabIndex = 0;
+    const p = s.lat_perc || 0, d = s.lat_dir || 0, fa = s.first_audio || 0;
+    const w = (x) => (100 * x / MAXLAT).toFixed(1) + "%";
+    c.innerHTML =
+      `<div class="row1"><span class="pill ${s.priority}">${s.priority}</span><span class="act">${s.action_cn}</span>` +
+      `${s.must ? '<span class="pill P0" title="必须说：会打断正在说的话">必须说</span>' : ""}<span class="when">${fmt(s.t)}</span></div>` +
+      `<div class="say">${s.text}</div>` +
+      `<div class="route">挂在决策树：<b>${s.branch}</b> → ${s.item}</div>` +
+      `<div class="why"><div><span>依据</span>${s.reason}</div><div><span>落地提示</span>${s.hint}</div>` +
+      `<div class="lat"><div class="latbar" title="感知 ${p.toFixed(2)} s · 决策 ${d.toFixed(3)} s · 说话人到首个语音块 ${fa.toFixed(2)} s">` +
+      `<i class="a" style="width:${w(p)}"></i><i class="b" style="width:${w(d + 0.004)}"></i><i class="c" style="width:${w(fa)}"></i></div>` +
+      `<div class="latlab"><span>感知 ${p.toFixed(2)}s</span><span>说话人 ${fa.toFixed(2)}s</span><span>玩家听到 +${(s.e2e_heard || 0).toFixed(2)}s</span></div></div>` +
+      `<div><button class="playbtn" type="button" data-i="${i}">▶ 听这句（${(s.wav_dur || 0).toFixed(1)} s）</button></div></div>` +
+      (s.note ? `<div class="note">${s.note}</div>` : "");
+    c.addEventListener("click", (e) => {
+      if (e.target.closest(".playbtn")) return;
+      seek(s.t + (s.e2e_heard || 0) + .01); c.classList.add("open");
+    });
+    c.addEventListener("keydown", (e) => { if (e.key === "Enter") c.click(); });
+    cardsEl.appendChild(c);
+  });
+  cardsEl.addEventListener("click", (e) => { const b = e.target.closest(".playbtn"); if (b) playAudio(+b.dataset.i, true); });
+
+  let curCard = -2;
+  function drawCards(now) {
+    let cur = -1;
+    for (let i = 0; i < SP.length; i++) if (SP[i].t <= now) cur = i;
+    if (cur === curCard) return;
+    SP.forEach((s, i) => {
+      const c = $("c" + i);
+      c.classList.toggle("future", i > cur);
+      c.classList.toggle("now", i === cur);
+    });
+    curCard = cur;
+    if (cur >= 0) {
+      const c = $("c" + cur);
+      if (getComputedStyle(cardsEl).overflowY === "auto") cardsEl.scrollTop = c.offsetTop - cardsEl.offsetTop - 8;
+      else if (playing) { const r = c.getBoundingClientRect(); if (r.top < 0 || r.bottom > innerHeight - 110) c.scrollIntoView({block: "center", behavior: "smooth"}); }
+    }
+  }
+
+  // ---------------- 语音 ----------------
+  const audios = {};
+  let playingAudio = null;
+  function playAudio(i, force) {
+    if (!force && !$("snd").checked) return;
+    const src = D.audio[String(i)];
+    if (!src) return;
+    if (playingAudio) { playingAudio.pause(); }
+    const a = audios[i] || (audios[i] = new Audio(src));
+    a.currentTime = 0; playingAudio = a;
+    a.play().catch(() => {});
+  }
+
+  // ---------------- 时间轴 ----------------
+  const tl = $("tlsvg");
+  const TLW = 1000, TLH = 58;
+  tl.setAttribute("viewBox", `0 0 ${TLW} ${TLH}`);
+  const X = (t) => (t - T0) / (T1 - T0) * TLW;
+  el("rect", {x: 0, y: 36, width: TLW, height: 6, rx: 3, fill: "var(--surface2)"}, tl);
+  for (const [t] of EV) el("rect", {x: X(t) - .4, y: 30, width: .8, height: 6, fill: "var(--muted)", opacity: .7}, tl);
+  const progress = el("rect", {x: 0, y: 36, width: 0, height: 6, rx: 3, fill: "var(--ink2)"}, tl);
+  SP.forEach((s) => {
+    const h = {P0: 22, P1: 17, P2: 13, P3: 10}[s.priority];
+    el("rect", {x: X(s.t) - 1.6, y: 28 - h, width: 3.2, height: h, rx: 1.5, fill: `var(--${s.priority.toLowerCase()})`}, tl);
+  });
+  for (let m = 5; m * 60 < T1; m += 5) {
+    const t = el("text", {x: X(m * 60), y: 55, "text-anchor": "middle", "font-size": 10, fill: "var(--muted)", "font-family": "var(--mono)"}, tl);
+    t.textContent = m + "′";
+  }
+  const head = el("rect", {x: 0, y: 2, width: 2, height: 46, fill: "var(--ink)"}, tl);
+  const tlBox = $("tl"), tip = $("tip");
+  const tAt = (clientX) => { const r = tlBox.getBoundingClientRect(); return T0 + Math.max(0, Math.min(1, (clientX - r.left) / r.width)) * (T1 - T0); };
+  let dragging = false;
+  tlBox.addEventListener("pointerdown", (e) => { dragging = true; tlBox.setPointerCapture(e.pointerId); seek(tAt(e.clientX)); });
+  tlBox.addEventListener("pointermove", (e) => {
+    const t = tAt(e.clientX);
+    if (dragging) seek(t);
+    const near = SP.reduce((b, s) => Math.abs(s.t - t) < Math.abs(b.t - t) ? s : b, SP[0]);
+    const r = tlBox.getBoundingClientRect();
+    tip.hidden = false;
+    tip.style.left = Math.max(60, Math.min(r.width - 60, e.clientX - r.left)) + "px";
+    tip.textContent = Math.abs(near.t - t) < (T1 - T0) / 120 ? `${fmt(near.t)} ${near.priority} ${near.action_cn}` : fmt(t);
+  });
+  tlBox.addEventListener("pointerup", () => { dragging = false; });
+  tlBox.addEventListener("pointerleave", () => { tip.hidden = true; });
+
+  // ---------------- 播放 ----------------
+  const SPEEDS = [1, 4, 16, 60];
+  let speed = 4, playing = false, now = T0, last = 0, heardIdx = 0;
+  $("speed").innerHTML = SPEEDS.map((s) => `<button type="button" data-s="${s}" aria-pressed="${s === speed}">${s}×</button>`).join("");
+  $("speed").addEventListener("click", (e) => {
+    const b = e.target.closest("button"); if (!b) return;
+    speed = +b.dataset.s;
+    [...$("speed").children].forEach((x) => x.setAttribute("aria-pressed", String(+x.dataset.s === speed)));
+  });
+  function frameAt(t) {
+    let lo = 0, hi = R.length - 1;
+    while (lo < hi) { const m = (lo + hi + 1) >> 1; if (R[m][K.t] <= t) lo = m; else hi = m - 1; }
+    return R[lo];
+  }
+  function heardIndexAt(t) { let i = 0; while (i < SP.length && SP[i].t + (SP[i].e2e_heard || 0) <= t) i++; return i; }
+  function render() {
+    drawHud(frameAt(now));
+    drawEvents(now);
+    drawCards(now);
+    const x = X(now);
+    head.setAttribute("x", Math.max(0, Math.min(TLW - 2, x - 1)));
+    progress.setAttribute("width", Math.max(0, x));
+    $("tcur").textContent = `${fmt(now)} / ${fmt(T1)}`;
+  }
+  function seek(t) { now = Math.max(T0, Math.min(T1, t)); heardIdx = heardIndexAt(now); render(); }
+  function tick(ts) {
+    if (!playing) return;
+    const dt = last ? (ts - last) / 1000 : 0; last = ts;
+    now = Math.min(T1, now + dt * speed);
+    while (heardIdx < SP.length && SP[heardIdx].t + (SP[heardIdx].e2e_heard || 0) <= now) {
+      if (speed <= 2) playAudio(heardIdx, false);
+      heardIdx++;
+    }
+    render();
+    if (now >= T1) { setPlaying(false); return; }
+    requestAnimationFrame(tick);
+  }
+  function setPlaying(p) {
+    playing = p; last = 0;
+    $("play").textContent = p ? "暂停" : "播放";
+    if (p) requestAnimationFrame(tick);
+  }
+  $("play").addEventListener("click", () => setPlaying(!playing));
+  const jump = (dir) => {
+    const idx = dir > 0 ? SP.findIndex((s) => s.t > now + .5) : (() => { let j = -1; SP.forEach((s, i) => { if (s.t < now - 3) j = i; }); return j; })();
+    if (idx < 0) return;
+    const s = SP[idx]; seek(s.t + (s.e2e_heard || 0) + .01);
+    if (!playing) playAudio(idx, false);
+  };
+  $("prev").addEventListener("click", () => jump(-1));
+  $("next").addEventListener("click", () => jump(1));
+  document.addEventListener("keydown", (e) => {
+    const tag = e.target.tagName;
+    if (tag === "INPUT") return;
+    if (e.key === " ") { if (tag === "BUTTON") return; e.preventDefault(); setPlaying(!playing); }
+    else if (e.key === "ArrowRight") { e.preventDefault(); jump(1); }
+    else if (e.key === "ArrowLeft") { e.preventDefault(); jump(-1); }
+  });
+
+  // 打开时停在最密集的一段：先找掩体 → 掩体后打药 → 开枪后转点 → P0 → 回血 → 顶住了
+  seek(D.startAt);
+})();
+</script>

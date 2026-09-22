@@ -1,0 +1,28 @@
+# secrets — never commit
+.env
+.env.*
+*_key
+*secret*
+*.pem
+*.key
+
+# model weights / checkpoints — never commit
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.gguf
+*.tgz
+ckpts/
+checkpoints/
+
+# internal data (recordings, per-frame readings) — never commit
+private_data/
+*.wav
+
+# local caches
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store

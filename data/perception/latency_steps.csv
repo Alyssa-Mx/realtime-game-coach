@@ -1,0 +1,7 @@
+step,sec_per_frame,engine,note
+A 现状（未 merge，BATCH=16）,5.285,HF transformers,1.00×
+B merge_and_unload,3.473,HF transformers,1.52×
+C merge + 单批 31,3.351,HF transformers,1.58× ← 已采纳为新默认
+D merge + 按输出长度分组,3.397,HF transformers,1.56×（无效，反而略慢）
+E merge + 只跑 prefill,1.818,HF transformers,—
+F vLLM（merge 后权重）,0.934,vLLM 0.19.1,vs C 3.59×

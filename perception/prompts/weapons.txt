@@ -1,0 +1,13 @@
+这是《和平精英》屏幕底部武器栏的裁剪图，左右最多两把枪的侧影图标：
+左 = 当前手持的主枪，右 = 背包里的备用枪。
+
+输出 JSON：
+{"main": "枪名或 unknown 或 null", "alt": "枪名或 unknown 或 null"}
+
+规则：
+- 常见枪名（和平精英口径）：M416、M762、AKM、SCAR-L、M16A4、GROZA、AUG、QBZ95、
+  G36C、UMP45、Vector、野牛、汤姆逊、Mini14、SLR、SKS、Mk14、QBU、M24、Kar98k、
+  AWM、S12K、S686、S1897、DBS、DP-28、M249、十字弩、平底锅
+- 注意：M4A1 是端游枪名，此游戏没有，不要输出 M4A1
+- 只按图标轮廓判断；没把握 → "unknown"。空槽位（没有枪）→ null
+- "unknown" 和 null 含义不同，不要混用

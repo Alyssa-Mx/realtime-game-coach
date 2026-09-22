@@ -1,0 +1,5 @@
+tier,frames,frame_exact,sec_per_frame_vllm,requests,gen_tokens
+S1,215,0.298,1.608,32,396
+S2,215,0.065,,,
+S3,215,0.102,,,
+S4,215,0.060,3.367,1,325

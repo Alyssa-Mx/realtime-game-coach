@@ -1,0 +1,128 @@
+{"type": "GEAR_MISSING", "t": 134, "t_video": 72.0, "kind": "persist", "parts": ["护甲"]}
+{"type": "TEAM_KILL", "t": 306, "t_video": 158.0, "kind": "edge", "raw": "你的队友 队友3 使用UZI冲锋枪击倒了 玩家95", "action": "击倒", "who": 3, "weapon": "UZI"}
+{"type": "TEAM_KILL", "t": 310, "t_video": 160.0, "kind": "edge", "raw": "你的队友 队友3使用UZI冲锋枪淘汰了 玩家95", "action": "淘汰", "who": 3, "weapon": "UZI"}
+{"type": "TEAM_KILL", "t": 312, "t_video": 161.0, "kind": "edge", "raw": "你的队友 队友3 使用UZI冲锋枪淘汰了 玩家95", "action": "淘汰", "who": 3, "weapon": "UZI"}
+{"type": "TEAM_KILL", "t": 368, "t_video": 189.0, "kind": "edge", "raw": "你的队友 队友3 使用UZI冲锋枪精确打击击倒了 玩家90", "action": "击倒", "who": 3, "weapon": "UZI"}
+{"type": "TEAM_KILL", "t": 372, "t_video": 191.0, "kind": "edge", "raw": "你的队友 队友3使用UZI冲锋枪精确打击击倒了 玩家90", "action": "击倒", "who": 3, "weapon": "UZI"}
+{"type": "TEAM_KILL", "t": 374, "t_video": 192.0, "kind": "edge", "raw": "你的队友 队友3 使用UZI冲锋枪精确打击击倒了 玩家90", "action": "击倒", "who": 3, "weapon": "UZI"}
+{"type": "TEAM_KILL", "t": 378, "t_video": 194.0, "kind": "edge", "raw": "你的队友 队友3使用M416突击步枪淘汰了 玩家90", "action": "淘汰", "who": 3, "weapon": "M416"}
+{"type": "TEAM_KILL", "t": 380, "t_video": 195.0, "kind": "edge", "raw": "你的队友 队友3 使用M416突击步枪淘汰了 玩家90", "action": "淘汰", "who": 3, "weapon": "M416"}
+{"type": "ZONE_SHRINK_START", "t": 420, "t_video": 215.0, "kind": "edge", "outside": false, "dist": null}
+{"type": "ENTER_VEHICLE", "t": 510, "t_video": 260.0, "kind": "edge", "seat": "驾驶", "outside": false, "dist": null}
+{"type": "TEAMMATE_DANGER", "t": 546, "t_video": 278.0, "kind": "edge", "member": 3, "in_combat": false}
+{"type": "TEAM_KILL", "t": 554, "t_video": 282.0, "kind": "edge", "raw": "你的队友 队友3 使用M416突击步枪精确打击淘汰了 玩家79", "action": "淘汰", "who": 3, "weapon": "M416"}
+{"type": "TEAM_KILL", "t": 562, "t_video": 286.0, "kind": "edge", "raw": "你的队友 队友3使用M416突击步枪精确打击淘汰了 玩家79", "action": "淘汰", "who": 3, "weapon": "M416"}
+{"type": "TEAM_KILL", "t": 580, "t_video": 295.0, "kind": "edge", "raw": "你的队友 队友3 使用M416突击步枪淘汰了 玩家80", "action": "淘汰", "who": 3, "weapon": "M416"}
+{"type": "TEAM_KILL", "t": 582, "t_video": 296.0, "kind": "edge", "raw": "你的队友 队友3使用M416突击步枪淘汰了 玩家80", "action": "淘汰", "who": 3, "weapon": "M416"}
+{"type": "TEAM_KILL", "t": 584, "t_video": 297.0, "kind": "edge", "raw": "你的队友 队友3 使用M416突击步枪淘汰了 玩家80", "action": "淘汰", "who": 3, "weapon": "M416"}
+{"type": "TEAM_KILL", "t": 640, "t_video": 325.0, "kind": "edge", "raw": "你的队友 队友3 使用M416突击步枪击倒了 玩家17", "action": "击倒", "who": 3, "weapon": "M416"}
+{"type": "TEAM_KILL", "t": 652, "t_video": 331.0, "kind": "edge", "raw": "你的队友 队友3 使用UZI冲锋枪淘汰了 玩家17", "action": "淘汰", "who": 3, "weapon": "UZI"}
+{"type": "TEAM_KILL", "t": 660, "t_video": 335.0, "kind": "edge", "raw": "你的队友 队友3 使用620冲锋枪淘汰了 玩家17", "action": "淘汰", "who": 3, "weapon": "620"}
+{"type": "EXIT_VEHICLE", "t": 688, "t_video": 349.0, "kind": "edge", "seat": null, "outside": false, "dist": null}
+{"type": "SELF_KILL", "t": 690, "t_video": 350.0, "kind": "edge", "raw": "你使用 PKM轻机枪 淘汰了 玩家91", "player": "91"}
+{"type": "TEAM_KILL", "t": 748, "t_video": 379.0, "kind": "edge", "raw": "你的队友 队友3 使用M416突击步枪击倒了 玩家18", "action": "击倒", "who": 3, "weapon": "M416"}
+{"type": "SELF_HP_DROP", "t": 748, "t_video": 379.0, "kind": "edge", "frm": 1.0, "to": 0.781, "drop": 0.22}
+{"type": "SELF_HP_DROP", "t": 750, "t_video": 380.0, "kind": "edge", "frm": 0.781, "to": 0.34, "drop": 0.44}
+{"type": "SELF_HP_LOW", "t": 750, "t_video": 380.0, "kind": "persist", "hp": 0.34, "in_combat": true, "has_heal": true, "items": {"medkit": 1, "firstaid": 3, "bandage": 5}}
+{"type": "TEAM_KILL", "t": 752, "t_video": 381.0, "kind": "edge", "raw": "你的队友 队友3 使用M416突击步枪淘汰了 玩家18", "action": "淘汰", "who": 3, "weapon": "M416"}
+{"type": "SELF_HP_DROP", "t": 758, "t_video": 384.0, "kind": "edge", "frm": 0.34, "to": 0.118, "drop": 0.22}
+{"type": "SELF_KILL", "t": 760, "t_video": 385.0, "kind": "edge", "raw": "你使用PKM淘汰了玩家44", "player": "44"}
+{"type": "SELF_KNOCK", "t": 762, "t_video": 386.0, "kind": "edge", "raw": "你使用 PKM轻机枪 击倒了 玩家44", "player": "44"}
+{"type": "SELF_KILL", "t": 764, "t_video": 387.0, "kind": "edge", "raw": "你使用 PKM轻机枪精确打击 淘汰了 玩家44", "player": "44"}
+{"type": "AMMO_MAG_LOW", "t": 768, "t_video": 389.0, "kind": "persist", "mag": 20, "cap": 100, "weapon": "PKM", "in_combat": true, "firing": false}
+{"type": "SELF_HP_LOW", "t": 770, "t_video": 390.0, "kind": "persist", "hp": 0.118, "in_combat": true, "has_heal": true, "items": {"medkit": 2, "firstaid": 3, "bandage": 9}}
+{"type": "AMMO_MAG_LOW", "t": 784, "t_video": 397.0, "kind": "persist", "mag": 20, "cap": 100, "weapon": "PKM", "in_combat": false, "firing": false}
+{"type": "SELF_HP_LOW", "t": 790, "t_video": 400.0, "kind": "persist", "hp": 0.136, "in_combat": false, "has_heal": true, "items": {"medkit": 2, "firstaid": 3, "bandage": 9}}
+{"type": "TEAMMATE_DANGER", "t": 792, "t_video": 401.0, "kind": "edge", "member": 3, "in_combat": false}
+{"type": "AMMO_MAG_LOW", "t": 800, "t_video": 405.0, "kind": "persist", "mag": 20, "cap": 100, "weapon": "PKM", "in_combat": false, "firing": false}
+{"type": "TEAM_KILL", "t": 804, "t_video": 407.0, "kind": "edge", "raw": "你的队友 队友1 使用GROZA突击步枪击倒了玩家16", "action": "击倒", "who": 1, "weapon": "GROZA"}
+{"type": "TEAM_KILL", "t": 806, "t_video": 408.0, "kind": "edge", "raw": "你的队友 队友1 使用正在使用梨子步枪淘汰了 玩家16", "action": "淘汰", "who": 1, "weapon": "正在使用梨子"}
+{"type": "TEAM_KILL", "t": 808, "t_video": 409.0, "kind": "edge", "raw": "你的队友 队友1 使用G19在使用梨子步枪淘汰了 玩家16", "action": "淘汰", "who": 1, "weapon": "G19在使用梨子"}
+{"type": "TEAM_KILL", "t": 810, "t_video": 410.0, "kind": "edge", "raw": "你的队友 队友1 使用GROZA突击步枪淘汰了 玩家16", "action": "淘汰", "who": 1, "weapon": "GROZA"}
+{"type": "TEAM_KILL", "t": 814, "t_video": 412.0, "kind": "edge", "raw": "你的队友,队友1 使用GROZA突击步枪淘汰了 玩家16", "action": "淘汰", "who": 1, "weapon": "GROZA"}
+{"type": "AMMO_MAG_LOW", "t": 816, "t_video": 413.0, "kind": "persist", "mag": 20, "cap": 100, "weapon": "PKM", "in_combat": false, "firing": false}
+{"type": "ENTER_VEHICLE", "t": 830, "t_video": 420.0, "kind": "edge", "seat": "驾驶", "outside": false, "dist": null}
+{"type": "TEAMMATE_DANGER", "t": 892, "t_video": 451.0, "kind": "edge", "member": 2, "in_combat": false}
+{"type": "TEAM_KILL", "t": 894, "t_video": 452.0, "kind": "edge", "raw": "你的队友 队友1 使用GROZA突击步枪击倒了 玩家43", "action": "击倒", "who": 1, "weapon": "GROZA"}
+{"type": "TEAM_KILL", "t": 896, "t_video": 453.0, "kind": "edge", "raw": "你的队友 队友1 使用GROZA突击步枪精确打击淘汰了 玩家43", "action": "淘汰", "who": 1, "weapon": "GROZA"}
+{"type": "ALIVE_STAGE", "t": 900, "t_video": 455.0, "kind": "edge", "threshold": 50, "alive": 50}
+{"type": "TEAMMATE_DANGER", "t": 910, "t_video": 460.0, "kind": "edge", "member": 3, "in_combat": false}
+{"type": "ZONE_SHRINK_START", "t": 920, "t_video": 465.0, "kind": "edge", "outside": false, "dist": null}
+{"type": "EXIT_VEHICLE", "t": 942, "t_video": 476.0, "kind": "edge", "seat": null, "outside": false, "dist": null}
+{"type": "SELF_HP_DROP", "t": 950, "t_video": 480.0, "kind": "edge", "frm": 1.0, "to": 0.476, "drop": 0.52}
+{"type": "SELF_HP_LOW", "t": 950, "t_video": 480.0, "kind": "persist", "hp": 0.476, "in_combat": true, "has_heal": true, "items": {"medkit": 2, "firstaid": 3, "bandage": 9}}
+{"type": "SELF_KNOCK", "t": 952, "t_video": 481.0, "kind": "edge", "raw": "你使用 PKM轻机枪 击倒了 玩家72", "player": "72"}
+{"type": "SELF_KILL", "t": 958, "t_video": 484.0, "kind": "edge", "raw": "你使用 PKM轻机枪精确打击 淘汰了 玩家72", "player": "72"}
+{"type": "SELF_HP_DROP", "t": 962, "t_video": 486.0, "kind": "edge", "frm": 0.812, "to": 0.534, "drop": 0.28}
+{"type": "SELF_KILL", "t": 966, "t_video": 488.0, "kind": "edge", "raw": "你使用PKM轻机枪精确打击淘汰了玩家72", "player": "72"}
+{"type": "HEAL_IN_PROGRESS", "t": 984, "t_video": 497.0, "kind": "edge", "raw": "正在使用绷带"}
+{"type": "SELF_HP_DROP", "t": 988, "t_video": 499.0, "kind": "edge", "frm": 0.79, "to": 0.596, "drop": 0.19}
+{"type": "HEAL_IN_PROGRESS", "t": 990, "t_video": 500.0, "kind": "edge", "raw": "正在使用绷带"}
+{"type": "SELF_KNOCK", "t": 996, "t_video": 503.0, "kind": "edge", "raw": "你的队友玩家65使用M416突击步枪击倒了玩家65", "player": "65"}
+{"type": "TEAM_KILL", "t": 998, "t_video": 504.0, "kind": "edge", "raw": "你的队友 队友1使用GROZA突击步枪淘汰了 玩家65", "action": "淘汰", "who": 1, "weapon": "GROZA"}
+{"type": "TEAM_KILL", "t": 1000, "t_video": 505.0, "kind": "edge", "raw": "你的队友 队友1 使用GROZA突击步枪淘汰了 玩家65", "action": "淘汰", "who": 1, "weapon": "GROZA"}
+{"type": "ENERGY_TOPUP", "t": 1002, "t_video": 506.0, "kind": "persist", "hp": 0.771, "energy": 0.3071, "items": {"drink": 5, "painkiller": 3, "adrenaline": 1}, "quiet_s": 14}
+{"type": "ENTER_VEHICLE", "t": 1006, "t_video": 508.0, "kind": "edge", "seat": "驾驶", "outside": false, "dist": null}
+{"type": "TEAM_KILL", "t": 1060, "t_video": 535.0, "kind": "edge", "raw": "你的队友 队友1 使用GROZA突击步枪淘汰了 玩家64", "action": "淘汰", "who": 1, "weapon": "GROZA"}
+{"type": "TEAM_KILL", "t": 1068, "t_video": 539.0, "kind": "edge", "raw": "你的队友 队友1使用GROZA突击步枪淘汰了 玩家64", "action": "淘汰", "who": 1, "weapon": "GROZA"}
+{"type": "EXIT_VEHICLE", "t": 1068, "t_video": 539.0, "kind": "edge", "seat": "驾驶", "outside": false, "dist": null}
+{"type": "TEAM_KILL", "t": 1088, "t_video": 549.0, "kind": "edge", "raw": "你的队友 队友3 使用AMR狙击枪击倒了 玩家75", "action": "击倒", "who": 3, "weapon": "AMR"}
+{"type": "TEAM_KILL", "t": 1092, "t_video": 551.0, "kind": "edge", "raw": "你的队友 队友3 使用AMR狙击枪淘汰了 玩家75 (213 m)", "action": "淘汰", "who": 3, "weapon": "AMR"}
+{"type": "TEAM_KILL", "t": 1108, "t_video": 559.0, "kind": "edge", "raw": "你的队友 队友1 使用GROZA突击步枪淘汰了 玩家94", "action": "淘汰", "who": 1, "weapon": "GROZA"}
+{"type": "ALIVE_STAGE", "t": 1136, "t_video": 573.0, "kind": "edge", "threshold": 20, "alive": 20}
+{"type": "SELF_HP_DROP", "t": 1190, "t_video": 600.0, "kind": "edge", "frm": 0.942, "to": 0.734, "drop": 0.21}
+{"type": "SELF_HP_DROP", "t": 1194, "t_video": 602.0, "kind": "edge", "frm": 0.734, "to": 0.528, "drop": 0.21}
+{"type": "ZONE_SHRINK_START", "t": 1208, "t_video": 609.0, "kind": "edge", "outside": false, "dist": null}
+{"type": "SELF_KILL", "t": 1214, "t_video": 612.0, "kind": "edge", "raw": "你使用 PKM轻机枪 淘汰了 玩家35", "player": "35"}
+{"type": "SELF_KILL", "t": 1222, "t_video": 616.0, "kind": "edge", "raw": "你使用PKM轻机枪 淘汰了 玩家35", "player": "35"}
+{"type": "TEAM_KILL", "t": 1224, "t_video": 617.0, "kind": "edge", "raw": "你的队友 队友3 使用AMR狙击枪击倒了 玩家74", "action": "击倒", "who": 3, "weapon": "AMR"}
+{"type": "TEAM_KILL", "t": 1228, "t_video": 619.0, "kind": "edge", "raw": "你的队友 队友3 正在使用绷带枪击倒了 玩家74", "action": "击倒", "who": 3, "weapon": null}
+{"type": "TEAM_KILL", "t": 1230, "t_video": 620.0, "kind": "edge", "raw": "你的队友 队友3 便在使用绷带枪击倒了 玩家74", "action": "击倒", "who": 3, "weapon": null}
+{"type": "TEAM_KILL", "t": 1232, "t_video": 621.0, "kind": "edge", "raw": "你的队友 队友3 正在使用绷带枪击倒了 玩家74", "action": "击倒", "who": 3, "weapon": null}
+{"type": "HEAL_IN_PROGRESS", "t": 1235, "t_video": 622.0, "kind": "edge", "raw": "正在使用绷带"}
+{"type": "HEAL_IN_PROGRESS", "t": 1239, "t_video": 624.0, "kind": "edge", "raw": "正在使用绷带"}
+{"type": "TEAMMATE_DANGER", "t": 1250, "t_video": 630.0, "kind": "edge", "member": 3, "in_combat": false}
+{"type": "TEAM_KILL", "t": 1252, "t_video": 631.0, "kind": "edge", "raw": "你的队友 队友1 使用GROZA突击步枪精确打击击倒了 玩家47", "action": "击倒", "who": 1, "weapon": "GROZA"}
+{"type": "TEAM_KILL", "t": 1258, "t_video": 634.0, "kind": "edge", "raw": "你的队友 队友3 使用AMR狙击枪击倒了 玩家50", "action": "击倒", "who": 3, "weapon": "AMR"}
+{"type": "TEAMMATE_DANGER", "t": 1260, "t_video": 635.0, "kind": "edge", "member": 3, "in_combat": false}
+{"type": "TEAM_KILL", "t": 1265, "t_video": 637.0, "kind": "edge", "raw": "你的队友 队友3 使用AMR狙击枪淘汰了 玩家50 (226 m)", "action": "淘汰", "who": 3, "weapon": "AMR"}
+{"type": "TEAM_KILL", "t": 1273, "t_video": 641.0, "kind": "edge", "raw": "你的队友/队友3 使用AMR狙击枪淘汰了 玩家50 (226 m)", "action": "淘汰", "who": 3, "weapon": "AMR"}
+{"type": "SELF_HP_DROP", "t": 1297, "t_video": 653.0, "kind": "edge", "frm": 0.753, "to": 0.41, "drop": 0.34}
+{"type": "SELF_HP_LOW", "t": 1297, "t_video": 653.0, "kind": "persist", "hp": 0.41, "in_combat": true, "has_heal": true, "items": {"medkit": 2, "firstaid": 3, "bandage": 8}}
+{"type": "SELF_HP_DROP", "t": 1298, "t_video": 654.0, "kind": "edge", "frm": 0.41, "to": 0.264, "drop": 0.15}
+{"type": "SELF_KILL", "t": 1301, "t_video": 655.0, "kind": "edge", "raw": "你使用 PKM轻机枪 淘汰了 玩家7", "player": "7"}
+{"type": "HEAL_IN_PROGRESS", "t": 1310, "t_video": 660.0, "kind": "edge", "raw": "正在使用绷带"}
+{"type": "TEAMMATE_DOWNED", "t": 1360, "t_video": 685.0, "kind": "edge", "member": 2, "smoke": 1, "cause": "enemy"}
+{"type": "SELF_HP_DROP", "t": 1372, "t_video": 691.0, "kind": "edge", "frm": 0.753, "to": 0.503, "drop": 0.25}
+{"type": "TEAM_KILL", "t": 1374, "t_video": 692.0, "kind": "edge", "raw": "你的队友 队友3 使用GROZA突击步枪淘汰了 玩家53", "action": "淘汰", "who": 3, "weapon": "GROZA"}
+{"type": "SELF_HP_LOW", "t": 1374, "t_video": 692.0, "kind": "persist", "hp": 0.499, "in_combat": true, "has_heal": true, "items": {"medkit": 2, "firstaid": 3, "bandage": 3}}
+{"type": "TEAMMATE_DOWNED", "t": 1374, "t_video": 692.0, "kind": "edge", "member": 2, "smoke": 1, "cause": "enemy"}
+{"type": "SELF_KNOCK", "t": 1382, "t_video": 696.0, "kind": "edge", "raw": "你使用 PKM轻机枪 击倒了 玩家49", "player": "49"}
+{"type": "TEAMMATE_DANGER", "t": 1384, "t_video": 697.0, "kind": "edge", "member": 2, "in_combat": true}
+{"type": "TEAMMATE_DOWNED", "t": 1388, "t_video": 699.0, "kind": "edge", "member": 2, "smoke": 1, "cause": "enemy"}
+{"type": "SELF_KILL", "t": 1390, "t_video": 700.0, "kind": "edge", "raw": "你使用 PKM轻机枪 淘汰了 玩家49", "player": "49"}
+{"type": "TEAMMATE_DANGER", "t": 1392, "t_video": 701.0, "kind": "edge", "member": 2, "in_combat": true}
+{"type": "SELF_HP_LOW", "t": 1394, "t_video": 702.0, "kind": "persist", "hp": 0.499, "in_combat": true, "has_heal": true, "items": {"medkit": 2, "firstaid": 3, "bandage": 3}}
+{"type": "ALIVE_STAGE", "t": 1394, "t_video": 702.0, "kind": "edge", "threshold": 10, "alive": 10}
+{"type": "HEAL_IN_PROGRESS", "t": 1401, "t_video": 705.0, "kind": "edge", "raw": "正在使用绷带"}
+{"type": "TEAM_KILL", "t": 1403, "t_video": 706.0, "kind": "edge", "raw": "你的队友 队友3 正在使用绷带枪击倒了 玩家51", "action": "击倒", "who": 3, "weapon": null}
+{"type": "TEAM_KILL", "t": 1405, "t_video": 707.0, "kind": "edge", "raw": "你的队友 队友3 便在使用绷带枪击倒了 玩家51", "action": "击倒", "who": 3, "weapon": null}
+{"type": "TEAM_KILL", "t": 1406, "t_video": 708.0, "kind": "edge", "raw": "你的队友 队友3 使用AM在使用棚滞汰了 玩家51 (199 m)", "action": "淘汰", "who": 3, "weapon": null}
+{"type": "TEAM_KILL", "t": 1409, "t_video": 709.0, "kind": "edge", "raw": "你的队友 队友3 使用AB在使用绷带淘汰了 玩家51 (199 m)", "action": "淘汰", "who": 3, "weapon": null}
+{"type": "TEAM_KILL", "t": 1410, "t_video": 710.0, "kind": "edge", "raw": "你的队友 队友2 由于正在使用绷带时间过长被淘汰了", "action": "淘汰", "who": 2, "weapon": null}
+{"type": "TEAM_KILL", "t": 1413, "t_video": 711.0, "kind": "edge", "raw": "你的队友 队友1 使用GROZA突击步枪淘汰了 玩家54", "action": "淘汰", "who": 1, "weapon": "GROZA"}
+{"type": "ZONE_SHRINK_START", "t": 1418, "t_video": 714.0, "kind": "edge", "outside": false, "dist": null}
+{"type": "TEAM_KILL", "t": 1462, "t_video": 736.0, "kind": "edge", "raw": "你的队友 队友3 使用F57手枪精确打击击倒了 玩家67", "action": "击倒", "who": 3, "weapon": null}
+{"type": "TEAM_KILL", "t": 1468, "t_video": 739.0, "kind": "edge", "raw": "你的队友 队友3 使用F57手枪淘汰了 玩家67", "action": "淘汰", "who": 3, "weapon": null}
+{"type": "ENTER_VEHICLE", "t": 1488, "t_video": 749.0, "kind": "edge", "seat": "驾驶", "outside": true, "dist": 9}
+{"type": "ZONE_ENTERED", "t": 1496, "t_video": 753.0, "kind": "edge"}
+{"type": "EXIT_VEHICLE", "t": 1504, "t_video": 757.0, "kind": "edge", "seat": null, "outside": false, "dist": null}
+{"type": "ALIVE_STAGE", "t": 1528, "t_video": 769.0, "kind": "edge", "threshold": 5, "alive": 5}
+{"type": "TEAM_KILL", "t": 1574, "t_video": 792.0, "kind": "edge", "raw": "你的队友 队友3 使用破片手榴弹淘汰了 玩家52", "action": "淘汰", "who": 3, "weapon": null}
+{"type": "MATCH_WON", "t": 1582, "t_video": 796.0, "kind": "edge", "alive": 4, "tally": {"self_kill": 6, "self_knock": 4, "team_kill": 18, "signal_drops": 0, "self_downed": 0, "team_downed": 3, "zone_entries": 1, "hp_low_episodes": 4}}
+{"type": "ZONE_SHRINK_START", "t": 1598, "t_video": 804.0, "kind": "edge", "outside": false, "dist": null}
+{"type": "BOOST_IN_PROGRESS", "t": 1608, "t_video": 809.0, "kind": "edge", "raw": "正在使用能量饮料"}
+{"type": "TEAM_MSG", "t": 1652, "t_video": 831.0, "kind": "edge", "msg": "队友3：357' 标记了一处地点", "who": "队友3", "msg_kind": "mark", "mark_bearing": 357, "mark_rel": "左手边", "mark_compass": "北"}
+{"type": "ZONE_ENTERED", "t": 1670, "t_video": 840.0, "kind": "edge"}
+{"type": "TEAM_KILL", "t": 1688, "t_video": 849.0, "kind": "edge", "raw": "你的队友 队友3 使用AMR狙击枪淘汰了 玩家87", "action": "淘汰", "who": 3, "weapon": "AMR"}
+{"type": "AMMO_MAG_LOW", "t": 1700, "t_video": 855.0, "kind": "persist", "mag": 21, "cap": 150, "weapon": "PKM", "in_combat": true, "firing": true}
